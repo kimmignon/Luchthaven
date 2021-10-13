@@ -18,7 +18,20 @@ namespace Luchthaven
         }
 
         public string getCode() { return this.Code; }
-        public bool getVrij() {  return this.Vrij; }
+        public bool isVrij() {  return this.Vrij; }
+
+        public string geefOmschrijving()
+        {
+            string result = "Baan met code " + this.Code + ", status: ";
+            if (this.Vrij)
+            {
+                return result + "vrij.";
+            }
+            return result + "bezet.";
+        }
+
+
+
 
 
 
