@@ -22,7 +22,7 @@ do {
             break;
         case "2":
             Vliegtuig nieuwVliegtuig = new Vliegtuig();
-            Console.WriteLine( toren.RegistreerVliegtuig(nieuwVliegtuig));
+            Console.WriteLine(toren.RegistreerVliegtuig(nieuwVliegtuig));
             Console.WriteLine("\nOverzicht vliegtuigen \n" + toren.OverzichtVliegtuigen() + "\n");
             Console.WriteLine("Druk op een toets om verder te gaan");
             Console.ReadKey();

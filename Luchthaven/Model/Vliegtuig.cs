@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Luchthaven.Model
-{
+{   //enum voor verschillende vliegtuigstatussen
     public enum Vliegstatus { OpstijgenAanTeVragen, OpstijgenGoedgekeurd, Opgestegen }
 
     internal class Vliegtuig
@@ -14,19 +14,16 @@ namespace Luchthaven.Model
         private Baan ToegewezenBaan;
         private Vliegstatus VliegStat = new Vliegstatus();
 
-
-        //constructor
+        //Constructor voor aanmaak vliegtuig zonder vluchtnummer
         public Vliegtuig()
         {
-            VliegStat = Vliegstatus.OpstijgenAanTeVragen;
-     
         }
 
-        //Uitgebreide constructor: luchtnummer kan rechtstreeks worden toegevoegd bij aanmaak vliegtuig
+
+        //Constructor: luchtnummer kan rechtstreeks worden toegevoegd bij aanmaak vliegtuig
         public Vliegtuig(string vluchtnummer)
         {
             this.Vluchtnummer = vluchtnummer;
-            VliegStat = Vliegstatus.OpstijgenAanTeVragen;
         }
 
         //getters
@@ -34,7 +31,7 @@ namespace Luchthaven.Model
         public Baan GetBaan() { return this.ToegewezenBaan; }
         public Vliegstatus GetVliegstatus() { return this.VliegStat; }
 
-        //setters: controletoren kan vluchtnummer, baan en vliegstatus kiezen
+        //setters: controletoren kan vluchtnummer, baan en vliegstatus kiezen/aanpassen
         public void SetVluchtnummer(string vluchtnummer) { this.Vluchtnummer = vluchtnummer; }
         public void SetBaan(Baan toegewezenBaan) { this.ToegewezenBaan = toegewezenBaan;  }
         public void SetVliegstatus(Vliegstatus vliegstatus) { this.VliegStat = vliegstatus; }

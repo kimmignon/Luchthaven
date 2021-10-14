@@ -74,15 +74,14 @@ namespace Luchthaven.Model
             {
                 return "Aanvraag tot opstijgen niet goedgekeurd.Vliegtuig niet aanwezig";
             }
-            if(vliegtuig.GetVliegstatus() == Vliegstatus.OpstijgenAanTeVragen)
+            if (vliegtuig.GetVliegstatus() != Vliegstatus.OpstijgenAanTeVragen)
             {
                 return "Aanvraag tot opstijgen niet goedgekeurd. Vliegtuig heeft geen aanvraag tot opstijgen";
             }
-            if(baan == null)
+            if (baan == null)
             {
                 return "Aanvraag tot opstijgen niet goedgekeurd, geen vrije banen meer";
             }
-
             vliegtuig.SetVliegstatus(Vliegstatus.OpstijgenGoedgekeurd);
             vliegtuig.SetBaan(baan);
             baan.changeVrij(false);
